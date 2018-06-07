@@ -151,5 +151,4 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 
-
 require_once APPPATH.'config/routes.php';
