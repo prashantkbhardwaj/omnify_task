@@ -86,7 +86,9 @@ if (isset($_SERVER['KOHANA_ENV']))
 {
 	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
 }
-
+Kohana::$environment = isset($_SERVER['KOHANA_ENV'])
+    ? constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']))
+    : Kohana::PRODUCTION;
 /**
  * Initialize Kohana, setting the default options.
  *
@@ -104,6 +106,10 @@ if (isset($_SERVER['KOHANA_ENV']))
  */
 Kohana::init(array(
 	'base_url'   => '/var/www/omnify_task/',
+	'index_file'  => Kohana::$environment === Kohana::PRODUCTION,
+    'errors'      => Kohana::$environment !== Kohana::PRODUCTION,
+    'profile'     => Kohana::$environment !== Kohana::PRODUCTION,
+    'caching'     => Kohana::$environment === Kohana::PRODUCTION,
 ));
 
 /**
@@ -144,8 +150,6 @@ Kohana::modules(array(
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
-Route::set('default', '(<controller>(/<action>(/<id>)))')
-	->defaults(array(
-		'controller' => 'welcome',
-		'action'     => 'index',
-	));
+
+
+require_once APPPATH.'config/routes.php';
