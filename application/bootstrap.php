@@ -155,5 +155,3 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'welcome',
 		'action'     => 'index',
 	));
-
-require_once APPPATH.'config/routes.php';
