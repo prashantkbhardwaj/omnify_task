@@ -17,7 +17,7 @@
  * define the constants client id,secret and redirect url
  * start the session
  */
-require_once APPPATH.'/gplus-lib/vendor/autoload.php';
+require_once SYSPATH.'/gplus-lib/vendor/autoload.php';
 
 const CLIENT_ID = '255852271059-3gs2qj8idfc4n2o2cugacppk10fkbmcb.apps.googleusercontent.com';
 const CLIENT_SECRET = '_KnKc5SlcEWE0vbKmbgV_nsI';
