@@ -34,7 +34,7 @@ require_once __DIR__.'/gplus-lib/vendor/autoload.php';
         echo "<a class='login' href='" . $authUrl . "'><img src='gplus-lib/signin_button.png' height='50px'/></a>";
     } else {
         print "ID: {$id} <br>";
-        print "Name: {$name} <br>";
+        print "Name of user: {$name} <br>";
         print "Email: {$email } <br>";
         print "Image : {$profile_image_url} <br>";
         print "Cover  :{$cover_image_url} <br>";
