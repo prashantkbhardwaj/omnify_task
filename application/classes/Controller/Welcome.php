@@ -9,4 +9,11 @@ class Controller_Welcome extends Controller {
 	    $this->response->body($home_page);
 	}
 
+	public function action_success()
+	{
+		$view = View::factory('success');
+	    $success_page = $view->render();
+	    $this->response->body($success_page);
+	}
+
 } // End Welcome

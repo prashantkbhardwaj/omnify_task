@@ -4,7 +4,7 @@ require_once SYSPATH.'/gplus-lib/vendor/autoload.php';
 
 const CLIENT_ID = '255852271059-3gs2qj8idfc4n2o2cugacppk10fkbmcb.apps.googleusercontent.com';
 const CLIENT_SECRET = '_KnKc5SlcEWE0vbKmbgV_nsI';
-const REDIRECT_URI = 'http://ec2-13-232-60-95.ap-south-1.compute.amazonaws.com/';
+const REDIRECT_URI = 'http://ec2-13-232-60-95.ap-south-1.compute.amazonaws.com/success';
 
 session_start();
 
