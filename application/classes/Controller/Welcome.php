@@ -4,9 +4,7 @@ class Controller_Welcome extends Controller {
 
 	public function action_index()
 	{
-		$view = View::factory('home');
-	    $home_page = $view->render();
-	    $this->response->body($home_page);
+		$this->response->body('hello, world!');
 	}
 
 } // End Welcome

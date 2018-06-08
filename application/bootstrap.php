@@ -22,7 +22,7 @@ else
  * @link http://kohanaframework.org/guide/using.configuration
  * @link http://www.php.net/manual/timezones
  */
-date_default_timezone_set('Asia/Calcutta');
+date_default_timezone_set('America/Chicago');
 
 /**
  * Set the default locale.
@@ -86,9 +86,7 @@ if (isset($_SERVER['KOHANA_ENV']))
 {
 	Kohana::$environment = constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']));
 }
-Kohana::$environment = isset($_SERVER['KOHANA_ENV'])
-    ? constant('Kohana::'.strtoupper($_SERVER['KOHANA_ENV']))
-    : Kohana::PRODUCTION;
+
 /**
  * Initialize Kohana, setting the default options.
  *
@@ -105,11 +103,7 @@ Kohana::$environment = isset($_SERVER['KOHANA_ENV'])
  * - boolean  expose      set the X-Powered-By header                        FALSE
  */
 Kohana::init(array(
-	'base_url'   => '/var/www/omnify_task/',
-	'index_file'  => Kohana::$environment === Kohana::PRODUCTION,
-    'errors'      => Kohana::$environment !== Kohana::PRODUCTION,
-    'profile'     => Kohana::$environment !== Kohana::PRODUCTION,
-    'caching'     => Kohana::$environment === Kohana::PRODUCTION,
+	'base_url'   => '/kohana/',
 ));
 
 /**
