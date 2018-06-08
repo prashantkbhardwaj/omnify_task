@@ -17,7 +17,7 @@
  * define the constants client id,secret and redirect url
  * start the session
  */
-require_once __DIR__.'/gplus-lib/vendor/autoload.php';
+//require_once __DIR__.'/gplus-lib/vendor/autoload.php';
 
 
 
