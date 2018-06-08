@@ -1,22 +1,5 @@
 <?php
-/*  GOOGLE LOGIN BASIC - Tutorial
- *  file            - index.php
- *  Developer       - Krishna Teja G S
- *  Website         - http://packetcode.com/apps/google-login/
- *  Date            - 28th Aug 2015
- *  license         - GNU General Public License version 2 or later
-*/
 
-// REQUIREMENTS - PHP v5.3 or later
-// Note: The PHP client library requires that PHP has curl extensions configured. 
-
-/*
- * DEFINITIONS
- *
- * load the autoload file
- * define the constants client id,secret and redirect url
- * start the session
- */
 require_once SYSPATH.'/gplus-lib/vendor/autoload.php';
 
 const CLIENT_ID = '255852271059-3gs2qj8idfc4n2o2cugacppk10fkbmcb.apps.googleusercontent.com';
@@ -25,14 +8,6 @@ const REDIRECT_URI = 'http://ec2-13-232-60-95.ap-south-1.compute.amazonaws.com/'
 
 session_start();
 
-/* 
- * INITIALIZATION
- *
- * Create a google client object
- * set the id,secret and redirect uri
- * set the scope variables if required
- * create google plus object
- */
 $client = new Google_Client();
 $client->setClientId(CLIENT_ID);
 $client->setClientSecret(CLIENT_SECRET);
@@ -70,6 +45,7 @@ if (isset($_GET['code'])) {
   $client->authenticate($_GET['code']);
   $_SESSION['access_token'] = $client->getAccessToken();
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+  echo $redirect; die();
   header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
 }
 
