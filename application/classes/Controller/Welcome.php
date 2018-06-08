@@ -16,4 +16,11 @@ class Controller_Welcome extends Controller {
 	    $this->response->body($success_page);
 	}
 
+	public function action_check()
+	{
+		$view = View::factory('check');
+	    $check_page = $view->render();
+	    $this->response->body($check_page);
+	}
+
 } // End Welcome

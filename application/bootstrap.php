@@ -161,3 +161,9 @@ Route::set('success', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'welcome',
 		'action'     => 'success',
 	));
+
+Route::set('check', '(<controller>(/<action>(/<id>)))')
+	->defaults(array(
+		'controller' => 'welcome',
+		'action'     => 'check',
+	));
