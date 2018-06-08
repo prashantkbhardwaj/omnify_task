@@ -20,8 +20,8 @@ return array
 			 */
 			'hostname'   => 'localhost',
 			'database'   => 'omnify',
-			'username'   => 'root',
-			'password'   => 'root',
+			'username'   => FALSE,
+			'password'   => FALSE,
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',
