@@ -1,6 +1,14 @@
 <?php
-if (isset($_GET['token'])) {
-	$_SESSION['access_token'] = $_GET['token'];
+require_once APPPATH.'/gplusConfig.php';
+
+if (isset($_GET['code'])) {
+  $client->authenticate($_GET['code']);
+  $_SESSION['access_token'] = $client->getAccessToken();
+  $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+  header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
+}
+
+if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
   $client->setAccessToken($_SESSION['access_token']);
   $me = $plus->people->get('me');
 
