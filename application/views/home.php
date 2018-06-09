@@ -2,32 +2,11 @@
 
 require_once APPPATH.'/gplusConfig.php';
 
-
-/*
- * PROCESS
- *
- * A. Pre-check for logout
- * B. Authentication and Access token
- * C. Retrive Data
- */
-
-/* 
- * A. PRE-CHECK FOR LOGOUT
- * 
- * Unset the session variable in order to logout if already logged in    
- */
 if (isset($_REQUEST['logout'])) {
    session_unset();
 }
 
-/* 
- * B. AUTHORIZATION AND ACCESS TOKEN
- *
- * If the request is a return url from the google server then
- *  1. authenticate code
- *  2. get the access token and store in session
- *  3. redirect to same url to eleminate the url varaibles sent by google
- */
+
 if (isset($_GET['code'])) {
   $client->authenticate($_GET['code']);
   $_SESSION['access_token'] = $client->getAccessToken();
@@ -35,12 +14,7 @@ if (isset($_GET['code'])) {
   header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
 }
 
-/* 
- * C. RETRIVE DATA
- * 
- * If access token if available in session 
- * load it to the client object and access the required profile data
- */
+
 if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
   $client->setAccessToken($_SESSION['access_token']);
   $me = $plus->people->get('me');
@@ -92,7 +66,7 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
      * else print the retieved data
     */
     if (isset($authUrl)) {
-        echo "<a class='login' href='" . $authUrl . "'><img src='gplus-lib/signin_button.png' height='50px'/></a>";
+        echo "<a class='login' href='" . $authUrl . "'><img src='".APPPATH."gplus-lib/signin_button.png' height='70px'/></a>";
     } else {
         print "ID: {$id} <br>";
         print "Name: {$name} <br>";
