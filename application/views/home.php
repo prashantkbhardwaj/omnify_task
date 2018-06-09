@@ -66,7 +66,7 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
      * else print the retieved data
     */
     if (isset($authUrl)) {
-        echo "<a class='login' href='" . $authUrl . "'><img src='".URL::site(NULL, TRUE)."gplus-lib/signin_button.png' height='70px'/></a>";
+        echo "<a class='login' href='" . $authUrl . "'><img src='http://ec2-13-127-113-67.ap-south-1.compute.amazonaws.com/gplus-lib/signin_button.png' height='70px'/></a>";
     } else {
         print "ID: {$id} <br>";
         print "Name: {$name} <br>";
