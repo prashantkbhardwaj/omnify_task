@@ -13,6 +13,7 @@ return array(
 		// Do not forget to escape your dots (.) as these are regex patterns.
 		// These patterns should always fully match,
 		// as they are prepended with `^` and appended with `$`
+		'http://ec2-13-127-113-67.ap-south-1.compute.amazonaws.com',
 	),
 
 );
