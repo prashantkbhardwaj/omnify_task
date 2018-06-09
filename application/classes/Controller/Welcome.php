@@ -7,5 +7,5 @@ class Controller_Welcome extends Controller {
 		$view = View::factory('home');
 	    $home_page = $view->render();
 	    $this->response->body($home_page);
-	}
+	}ˇ
 } // End Welcome
