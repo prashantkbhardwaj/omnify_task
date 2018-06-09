@@ -17,3 +17,11 @@ $client->addScope(Google_Service_Calendar::CALENDAR_READONLY);
 
 $plus = new Google_Service_Plus($client);
 $service = new Google_Service_Calendar($client);
+
+$calendarId = 'primary';
+$optParams = array(
+  'maxResults' => 10,
+  'orderBy' => 'startTime',
+  'singleEvents' => true,
+  'timeMin' => date('c'),
+);

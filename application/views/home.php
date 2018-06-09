@@ -14,18 +14,10 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
   $authUrl = $client->createAuthUrl();
 }
 
-?>
 
-<div>
-    <?php
-    /*
-     * If login url is there then display login button
-     * else print the retieved data
-    */
     if (isset($authUrl)) {
-        echo "<a class='login' href='" . $authUrl . "'><img src='gplus-lib/signin_button.png' height='50px'/></a>";
+        echo "<a class='login' href='" . $authUrl . "'><img src='http://ec2-13-127-113-67.ap-south-1.compute.amazonaws.com/application/gplus-lib/signin_button.png' height='70px'/></a>";
     } else {
       echo "<a class='logout' href='?logout'><button>Logout</button></a>";
     }
     ?>
-</div>
