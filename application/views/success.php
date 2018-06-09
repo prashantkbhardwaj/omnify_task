@@ -60,7 +60,7 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
 		    }
 		}
         echo "<a class='logout' href='?logout'><button>Logout</button></a><br>";
-        echo "<a href='http://ec2-13-127-113-67.ap-south-1.compute.amazonaws.com/success/'><button><h2>Click to refresh</h2></button></a><br>";
+        echo "<a href='http://ec2-13-127-113-67.ap-south-1.compute.amazonaws.com/index.php/success/'><button><h2>Click to refresh</h2></button></a><br>";
     }
     ?>
 </div>
