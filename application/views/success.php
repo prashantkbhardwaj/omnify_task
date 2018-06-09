@@ -16,8 +16,6 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
   $client->setAccessToken($_SESSION['access_token']);
   $me = $plus->people->get('me');
 
-  $results = $service->events->listEvents($calendarId, $optParams);
-
   // Get User data
   $id = $me['id'];
   $name =  $me['displayName'];
@@ -58,7 +56,6 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
 		            $start = $event->start->date;
 		        }
 		        echo "<br>".date("Y-m-d h:i:sa", strtotime($start))."<br>".$event->getSummary()."<br><br>";
-		        //printf("%s (%s)\n", $event->getSummary(), $start);
 		    }
 		}
         echo "<a class='logout' href='?logout'><button>Logout</button></a>";
