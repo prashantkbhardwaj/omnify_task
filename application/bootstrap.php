@@ -135,6 +135,7 @@ Kohana::modules(array(
 	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+	'kohana-routing' => MODPATH.'kohana-routing',
 	));
 
 /**
@@ -151,11 +152,11 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 
-Route::set('check', 'Controller/')
-	->defaults(array(
-		'controller' => 'check',
-		'action'     => 'index',
-	));
+// Route::set('check', 'Controller/')
+// 	->defaults(array(
+// 		'controller' => 'check',
+// 		'action'     => 'index',
+// 	));
 
 
 // Route::set('success', '(<controller>(/<action>(/<id>)))')
@@ -165,8 +166,8 @@ Route::set('check', 'Controller/')
 // 	));
 
 
-Route::set('default', '(<controller>(/<action>(/<id>)))')
-	->defaults(array(
-		'controller' => 'welcome',
-		'action'     => 'index',
-	));
+// Route::set('default', '(<controller>(/<action>(/<id>)))')
+// 	->defaults(array(
+// 		'controller' => 'welcome',
+// 		'action'     => 'index',
+// 	));
