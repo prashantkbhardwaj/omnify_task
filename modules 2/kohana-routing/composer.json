@@ -1,0 +1,26 @@
+{
+    "name": "guss77/kohana-routing",
+    "type": "kohana-module",
+    "description": "Kohana >= 3.3 module for setting up routes through a configuration file",
+    "homepage": "https://github.com/guss77/kohana-routing",
+    "license": "BSD-3-Clause",
+    "keywords": ["kohana", "routing", "configuration"],
+    "authors": [
+        {
+            "name": "Oded Arbel",
+            "email": "oded@geek.co.il",
+            "homepage": "http://geek.co.il"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "kohana/core": ">=3.3",
+        "php": ">=5.4"
+    },
+    "require-dev": {
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "classmap": ["init.php"]
+    }
+}
