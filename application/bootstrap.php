@@ -162,7 +162,7 @@ Route::set('success', '(<controller>(/<action>(/<id>)))')
 		'action'     => 'index',
 	));
 
-Route::set('check', '(<controller>(/<action>(/<id>)))')
+Route::set('check', '(<controller>(/<action>))')
 	->defaults(array(
 		'controller' => 'check',
 		'action'     => 'index',
