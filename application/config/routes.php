@@ -2,7 +2,7 @@
  * Default Router
  **************************************************************/
 
-Route::set('first', '(<controller>(/<action>(/<id>)))')
+Route::set('default', '(<controller>(/<action>(/<id>)))')
 ->defaults(array(
     'controller' => 'Welcome',
     'action'     => 'index',
@@ -11,5 +11,11 @@ Route::set('first', '(<controller>(/<action>(/<id>)))')
 Route::set('testing', '(<controller>(/<action>(/<id>)))')
 ->defaults(array(
     'controller' => 'Testing',
+    'action'     => 'index',
+));
+
+Route::set('success', '(<controller>(/<action>(/<id>)))')
+->defaults(array(
+    'controller' => 'Success',
     'action'     => 'index',
 ));
