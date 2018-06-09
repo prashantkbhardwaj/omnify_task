@@ -15,6 +15,7 @@ if (isset($_GET['code'])) {
 if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
   $client->setAccessToken($_SESSION['access_token']);
   $me = $plus->people->get('me');
+  $results = $service->events->listEvents($calendarId, $optParams);
 
   // Get User data
   $id = $me['id'];

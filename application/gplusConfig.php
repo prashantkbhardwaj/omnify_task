@@ -25,4 +25,3 @@ $optParams = array(
   'singleEvents' => true,
   'timeMin' => date('c'),
 );
-$results = $service->events->listEvents($calendarId, $optParams);
