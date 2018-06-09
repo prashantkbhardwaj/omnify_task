@@ -152,11 +152,11 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 
-// Route::set('check', 'Controller/')
-// 	->defaults(array(
-// 		'controller' => 'check',
-// 		'action'     => 'index',
-// 	));
+Route::set('check', '(<controller>(/<action>(/<id>)))')
+	->defaults(array(
+		'controller' => 'check',
+		'action'     => 'index',
+	));
 
 
 // Route::set('success', '(<controller>(/<action>(/<id>)))')
@@ -166,8 +166,8 @@ Kohana::modules(array(
 // 	));
 
 
-// Route::set('default', '(<controller>(/<action>(/<id>)))')
-// 	->defaults(array(
-// 		'controller' => 'welcome',
-// 		'action'     => 'index',
-// 	));
+Route::set('default', '(<controller>(/<action>(/<id>)))')
+	->defaults(array(
+		'controller' => 'welcome',
+		'action'     => 'index',
+	));
