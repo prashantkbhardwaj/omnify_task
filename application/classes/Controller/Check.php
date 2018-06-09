@@ -10,3 +10,4 @@ class Controller_Check extends Controller {
 	}
 
 } // End Welcome
+?>
