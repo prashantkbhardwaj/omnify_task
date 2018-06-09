@@ -15,6 +15,8 @@ $client->setRedirectUri(REDIRECT_URI);
 $client->setScopes('email');
 
 $plus = new Google_Service_Plus($client);
+$service = new Google_Service_Calendar($client);
+
 
 /*
  * PROCESS
@@ -45,7 +47,6 @@ if (isset($_GET['code'])) {
   $client->authenticate($_GET['code']);
   $_SESSION['access_token'] = $client->getAccessToken();
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
- // echo $redirect; die();
   header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
 }
 
@@ -66,6 +67,29 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
   $profile_image_url = $me['image']['url'];
   $cover_image_url = $me['cover']['coverPhoto']['url'];
   $profile_url = $me['url'];
+
+  $calendarId = 'primary';
+  $optParams = array(
+    'maxResults' => 10,
+    'orderBy' => 'startTime',
+    'singleEvents' => true,
+    'timeMin' => date('c'),
+  );
+  $results = $service->events->listEvents($calendarId, $optParams);
+
+  if (empty($results->getItems())) {
+      print "No upcoming events found.\n";
+  } else {
+      print "Upcoming events:\n";
+      foreach ($results->getItems() as $event) {
+          $start = $event->start->dateTime;
+          if (empty($start)) {
+              $start = $event->start->date;
+          }
+          printf("%s (%s)\n", $event->getSummary(), $start);
+      }
+  }
+  
 
 } else {
   // get the login url   
