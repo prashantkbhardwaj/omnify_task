@@ -47,17 +47,18 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
         echo "<a class='login' href='" . $authUrl . "'><img src='http://ec2-13-127-113-67.ap-south-1.compute.amazonaws.com/application/gplus-lib/signin_button.png' height='70px'/></a>";
     } else {
     	echo "<img src='".$profile_image_url."' height='70px'/>";
-        print " Hello {$name} <br>";
+        print "<br>Hello {$name} <br>";
         if (empty($results->getItems())) {
-		    print "No upcoming events found.\n";
+		    echo "No upcoming events found.<br>";
 		} else {
-		    print "Upcoming events:\n";
+		    echo "Upcoming events:<br>";
 		    foreach ($results->getItems() as $event) {
 		        $start = $event->start->dateTime;
 		        if (empty($start)) {
 		            $start = $event->start->date;
 		        }
-		        printf("%s (%s)\n", $event->getSummary(), $start);
+		        echo "<br>".date("Y-m-d h:i:sa", $start)."<br>".$event->getSummary()."<br><br>";
+		        //printf("%s (%s)\n", $event->getSummary(), $start);
 		    }
 		}
         echo "<a class='logout' href='?logout'><button>Logout</button></a>";
