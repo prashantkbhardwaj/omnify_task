@@ -68,7 +68,7 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
     if (isset($authUrl)) {
         echo "<a class='login' href='" . $authUrl . "'><img src='http://ec2-13-127-113-67.ap-south-1.compute.amazonaws.com/application/gplus-lib/signin_button.png' height='70px'/></a>";
     } else {
-        $successUrl = "http://ec2-13-127-113-67.ap-south-1.compute.amazonaws.com/index.php/success?name=".$name."&results=".$results;
+        $successUrl = "http://ec2-13-127-113-67.ap-south-1.compute.amazonaws.com/index.php/success?name=".$name."&results=".$results->getItems();
         header('Location: ' . filter_var($successUrl, FILTER_SANITIZE_URL));
     }
     ?>
