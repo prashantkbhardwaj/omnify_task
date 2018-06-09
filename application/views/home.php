@@ -12,7 +12,8 @@ $client = new Google_Client();
 $client->setClientId(CLIENT_ID);
 $client->setClientSecret(CLIENT_SECRET);
 $client->setRedirectUri(REDIRECT_URI);
-$client->setScopes('email');
+$client->addScope('email');
+$client->addScope(Google_Service_Calendar::CALENDAR_READONLY);
 
 $plus = new Google_Service_Plus($client);
 $service = new Google_Service_Calendar($client);
