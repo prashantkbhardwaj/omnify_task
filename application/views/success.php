@@ -2,7 +2,7 @@
 if (isset($_GET['name'])) {
   echo "<h1>Success</h1><br>";
   $name = $_GET['name'];
-  $results = $_GET['results'];
+  $results = json_decode($_GET['results']);
 
   if (empty($results->getItems())) {
       print "No upcoming events found.\n";
