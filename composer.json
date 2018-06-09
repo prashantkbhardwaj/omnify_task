@@ -1,7 +1,6 @@
 {
 	"require": {
 		"phpunit/phpunit": "3.7.24 - 4",
-		"phing/phing": "dev-master",
-		"guss77/kohana-routing": "^1.1"
+		"phing/phing": "dev-master"
 	}
 }
