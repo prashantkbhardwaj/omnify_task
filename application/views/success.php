@@ -57,7 +57,7 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
 		        if (empty($start)) {
 		            $start = $event->start->date;
 		        }
-		        echo "<br>".date("Y-m-d h:i:sa", $start)."<br>".$event->getSummary()."<br><br>";
+		        echo "<br>".date("Y-m-d h:i:sa", strtotime($start))."<br>".$event->getSummary()."<br><br>";
 		        //printf("%s (%s)\n", $event->getSummary(), $start);
 		    }
 		}
