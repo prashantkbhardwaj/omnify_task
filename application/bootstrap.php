@@ -151,7 +151,7 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 
-Route::set('default', '(<controller>(/<action>))')
+Route::set('check', 'check/')
 	->defaults(array(
 		'controller' => 'check',
 		'action'     => 'index',
