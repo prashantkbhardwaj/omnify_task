@@ -15,6 +15,7 @@ if (isset($_GET['code'])) {
 if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
   $client->setAccessToken($_SESSION['access_token']);
   $me = $plus->people->get('me');
+  $results = $service->events->listEvents($calendarId, $optParams);
 
   // Get User data
   $id = $me['id'];
@@ -44,7 +45,6 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
     if (isset($authUrl)) {
         echo "<a class='login' href='" . $authUrl . "'><img src='http://ec2-13-127-113-67.ap-south-1.compute.amazonaws.com/application/gplus-lib/signin_button.png' height='70px'/></a>";
     } else {
-    	$results = $service->events->listEvents($calendarId, $optParams);
     	echo "<img src='".$profile_image_url."' height='70px'/>";
         print "<br>Hello {$name} <br>";
         if (empty($results->getItems())) {
@@ -59,7 +59,8 @@ if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
 		        echo "<br>".date("Y-m-d h:i:sa", strtotime($start))."<br>".$event->getSummary()."<br><br>";
 		    }
 		}
-        echo "<a class='logout' href='?logout'><button>Logout</button></a>";
+        echo "<a class='logout' href='?logout'><button>Logout</button></a><br>";
+        echo "<a href='http://ec2-13-127-113-67.ap-south-1.compute.amazonaws.com/success/'><button><h2>Click to refresh</h2></button></a><br>";
     }
     ?>
 </div>
