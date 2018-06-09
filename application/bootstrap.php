@@ -150,11 +150,13 @@ Kohana::modules(array(
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
-Route::set('default', '(<controller>(/<action>(/<id>)))')
+
+Route::set('check', '(<controller>(/<action>))')
 	->defaults(array(
-		'controller' => 'welcome',
+		'controller' => 'check',
 		'action'     => 'index',
 	));
+
 
 Route::set('success', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
@@ -162,8 +164,9 @@ Route::set('success', '(<controller>(/<action>(/<id>)))')
 		'action'     => 'index',
 	));
 
-Route::set('check', '(<controller>(/<action>))')
+
+Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller' => 'check',
+		'controller' => 'welcome',
 		'action'     => 'index',
 	));
