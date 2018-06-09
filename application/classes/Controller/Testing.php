@@ -4,7 +4,9 @@ class Controller_Testing extends Controller {
 
 	public function action_index()
 	{
-		$this->response->body('hello, friend!');
+		$view = View::factory('testing');
+	    $check_page = $view->render();
+	    $this->response->body($check_page);
 	}
 
 } // End Welcome
